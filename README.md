@@ -1,6 +1,6 @@
-# WNO
+# Hexo-WordCount
 
-[![npm](https://img.shields.io/npm/v/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) [![travis](https://img.shields.io/travis/willin/hexo-wordcount.svg)](https://travis-ci.org/willin/node-wno) [![npm](https://img.shields.io/npm/dm/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) 
+[![npm](https://img.shields.io/npm/v/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) [![npm](https://img.shields.io/npm/dm/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) 
 
 ## Installation
 
