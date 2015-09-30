@@ -5,9 +5,11 @@ hexo.extend.helper.register('wordcount', function (content) {
 	content = content.replace(/(<!--[^-]*-->)/g, '');//去注释
 	content = content.replace(/\s\s/g, '');//去多余空白字符
 	content = content.replace(/\W\s/g, '');//符号后空白符
+	var cn = content.match(/[\u4E00-\u9FA5]/g) || [];
+	var en = content.match(/(\W*\w*\W)/g) || [];
 	return numeral(
-		content.match(/[\u4E00-\u9FA5]/g).length + //中文
-		content.match(/(\W*\w*\W)/g).length  //英文
+		cn.length + //中文
+		en.length  //英文
 	).format('0,0');
 });
 
@@ -20,8 +22,10 @@ hexo.extend.helper.register('totalcount', function (site) {
 		content = content.replace(/(<!--[^-]*-->)/g, '');//去注释
 		content = content.replace(/\s\s/g, '');//去多余空白字符
 		content = content.replace(/\W\s/g, '');//符号后空白符
-		count += content.match(/[\u4E00-\u9FA5]/g).length + //中文
-			content.match(/(\W*\w*\W)/g).length;  //英文
+		var cn = content.match(/[\u4E00-\u9FA5]/g) || [];
+		var en = content.match(/(\W*\w*\W)/g) || [];
+		count += cn.length + //中文
+			en.length;  //英文
 	});
 	return numeral(count).format('0,0.0a');
 });
