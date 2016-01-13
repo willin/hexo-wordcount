@@ -1,6 +1,6 @@
 {
   "name": "hexo-wordcount",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Post Word Count Plugin of Hexo.",
   "main": "index",
   "scripts": {
