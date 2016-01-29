@@ -8,7 +8,6 @@
 npm install hexo-wordcount --save
 ```
 
-
 ## Usage
 
 ### Swig
@@ -17,6 +16,12 @@ Post Count:
 
 ```swig
    <span class="post-count">{{ wordcount(post.content) }}</span>
+```
+
+Post Minutes to Read:
+
+```swig
+   <span class="post-count">{{ min2read(post.content) }}</span>
 ```
 
 Total Count:
@@ -33,6 +38,12 @@ Post Count:
    <span class="post-count"><%= wordcount(post.content) %></span>
 ```
 
+Post Minutes to Read:
+
+```ejs
+   <span class="post-count"><%= min2read(post.content) %></span>
+```
+
 Total Count:
 
 ```ejs
@@ -46,6 +57,13 @@ Post Count:
 ```jade
    span.post-count= wordcount(post.content)
 ```
+
+Post Minutes to Read:
+
+```jade
+    span.post-count= min2read(post.content) 
+```
+
 
 Total Count:
 

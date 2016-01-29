@@ -6,23 +6,31 @@ var counter = function (content) {
   content = content.replace(/\W\s/g, ''); //符号后空白符
   var cn = content.match(/[\u4E00-\u9FA5]/g) || [];
   var en = content.match(/(\W*\w*\W)/g) || [];
-  return cn.length + en.length;
+  return [cn.length, en.length];
 };
+
+hexo.extend.helper.register('min2read', function (content) {
+  'use strict';
+  var len = counter(content);
+  return numeral(
+    len[0] / 300 + len[1] / 160
+  ).format('0');
+});
 
 hexo.extend.helper.register('wordcount', function (content) {
   'use strict';
+  var len = counter(content);
   return numeral(
-    counter(content)
+    len[0] + len[1]
   ).format('0,0');
 });
 
 hexo.extend.helper.register('totalcount', function (site) {
   'use strict';
   var count = 0;
-  var fs = require('fs');
   site.posts.forEach(function (post) {
-    var content = post.content;
-    count += counter(content);
+    var len = counter(post.content);
+    count += len[0] + len[1];
   });
   if (count < 1024) {
     return numeral(count).format('0,0');
