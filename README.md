@@ -1,6 +1,6 @@
 # Hexo-WordCount
 
-[![npm](https://img.shields.io/npm/v/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) [![npm](https://img.shields.io/npm/dm/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount)
+[![npm](https://img.shields.io/npm/v/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) [![npm](https://img.shields.io/npm/dm/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount) [![npm](https://img.shields.io/npm/dt/hexo-wordcount.svg?style=plastic)](https://npmjs.org/package/hexo-wordcount)
 
 ## Installation
 
@@ -61,7 +61,7 @@ Post Count:
 Post Minutes to Read:
 
 ```jade
-    span.post-count= min2read(post.content) 
+    span.post-count= min2read(post.content)
 ```
 
 
@@ -75,15 +75,19 @@ Total Count:
 ## Contributors
 
 ```
- project  : hexo-wordcount
- repo age : 7 months
- active   : 2 days
- commits  : 5
- files    : 5
- authors  :
-     5  Willin Wang  100.0%
+project  : hexo-wordcount
+repo age : 11 months
+active   : 4 days
+commits  : 7
+files    : 5
+authors  :
+    7  Willin Wang  100.0%
 ```
 
 ## LICENSE
 
 MIT
+
+Alipay Donation(通过支付宝捐赠)：
+
+![qr](https://cloud.githubusercontent.com/assets/1890238/15489630/fccbb9cc-2193-11e6-9fed-b93c59d6ef37.png)
