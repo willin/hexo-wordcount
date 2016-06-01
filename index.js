@@ -25,7 +25,7 @@ hexo.extend.helper.register('wordcount', function (content) {
   ).format('0,0');
 });
 
-hexo.extend.helper.register('totalcount', function (site) {
+hexo.extend.helper.register('totalcount', function (site, format) {
   'use strict';
   var count = 0;
   site.posts.forEach(function (post) {
@@ -35,5 +35,5 @@ hexo.extend.helper.register('totalcount', function (site) {
   if (count < 1024) {
     return numeral(count).format('0,0');
   }
-  return numeral(count).format('0,0.0a');
+  return numeral(count).format(format || '0,0.0a');
 });

@@ -10,6 +10,29 @@ npm install hexo-wordcount --save
 
 ## Usage
 
+### 字数统计 WordCount
+
+
+```js
+wordcount(post.content)
+```
+
+### 阅读时长预计 Min2Read
+
+```js
+min2read(post.content)
+```
+
+### 总字数统计 TotalCount
+
+```js
+totalcount(site, '0,0.0a')
+```
+
+第二个参数为可选参数，表示字数显示的 `format`，文档参考：<http://numeraljs.com/>
+
+## Demo
+
 ### Swig
 
 Post Count:
@@ -27,8 +50,10 @@ Post Minutes to Read:
 Total Count:
 
 ```swig
-   <span class="post-count">{{ totalcount(site) }}</span>
+   <span class="post-count">{{ totalcount(site, '0,0.0a') }}</span>
 ```
+
+Second param `format` optional.
 
 ### Ejs
 
@@ -75,13 +100,13 @@ Total Count:
 ## Contributors
 
 ```
-project  : hexo-wordcount
-repo age : 11 months
-active   : 4 days
-commits  : 7
-files    : 5
-authors  :
-    7  Willin Wang  100.0%
+ project  : hexo-wordcount
+ repo age : 12 months
+ active   : 5 days
+ commits  : 8
+ files    : 5
+ authors  :
+     8  Willin Wang  100.0%
 ```
 
 ## LICENSE
