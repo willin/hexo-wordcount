@@ -4,8 +4,8 @@ var counter = function (content) {
   content = content.replace(/(<!--[^-]*-->)/g, ''); //去注释
   content = content.replace(/\s\s/g, ''); //去多余空白字符
   content = content.replace(/\W\s/g, ''); //符号后空白符
-  content = content.replace(/(<script[^>]*?>)(.*)(<\/script>)/ig, ''); //去Script
-  content = content.replace(/(<style[^>]*?>)(.*)(<\/style>)/ig, ''); //去Style
+  content = content.replace(/(<script[^>]*?>)([^<]*)(<\/script>)/ig, ''); //去Script
+  content = content.replace(/(<style[^>]*?>)([^<]*)(<\/style>)/ig, ''); //去Style
   var cn = content.match(/[\u4E00-\u9FA5]/g) || [];
   var en = content.match(/(\W*\w*\W)/g) || [];
   return [cn.length, en.length];
