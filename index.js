@@ -1,14 +1,16 @@
 var numeral = require('numeral');
+var htmlToText = require('html-to-text');
+var wordcount = require('wordcount');
 
 var counter = function (content) {
-  content = content.replace(/(<!--[^-]*-->)/g, ''); //去注释
-  content = content.replace(/\s\s/g, ''); //去多余空白字符
-  content = content.replace(/\W\s/g, ''); //符号后空白符
-  content = content.replace(/(<script[^>]*>(.|\n)*?(?=<\/script>)<\/script>)/ig, ''); //去Script
-  content = content.replace(/(<style[^>]*>(.|\n)*?(?=<\/style>)<\/style>)/ig, ''); //去Style
+  content  =  htmlToText.fromString(content,{
+    wordwrap: false,
+    ignoreImage: true,
+    ignoreHref: true
+  });
   var cn = content.match(/[\u4E00-\u9FA5]/g) || [];
-  var en = content.match(/(\W*\w*\W)/g) || [];
-  return [cn.length, en.length];
+  var en = content.replace(/[\u4E00-\u9FA5]/g,'');
+  return [cn.length, wordcount(en)];
 };
 
 hexo.extend.helper.register('min2read', function (content) {
