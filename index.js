@@ -16,7 +16,8 @@ var counter = function (content) {
 hexo.extend.helper.register('min2read', function (content) {
   'use strict';
   var len = counter(content);
-  return numeral(
+  var readingTime = len[0] / 300 + len[1] / 160;
+  return readingTime < 1 ? '1' : numeral(
     len[0] / 300 + len[1] / 160
   ).format('0');
 });
