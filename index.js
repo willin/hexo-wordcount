@@ -14,14 +14,12 @@ var counter = function (content) {
 };
 
 hexo.extend.helper.register('min2read', function (content, { cn = 300, en = 160 } = {}) {
-  'use strict';
   var len = counter(content);
   var readingTime = len[0] / cn + len[1] / en;
   return readingTime < 1 ? '1' : numeral(readingTime.format('0'));
 });
 
 hexo.extend.helper.register('wordcount', function (content) {
-  'use strict';
   var len = counter(content);
   return numeral(
     len[0] + len[1]
@@ -29,7 +27,6 @@ hexo.extend.helper.register('wordcount', function (content) {
 });
 
 hexo.extend.helper.register('totalcount', function (site, format) {
-  'use strict';
   var count = 0;
   site.posts.forEach(function (post) {
     var len = counter(post.content);
