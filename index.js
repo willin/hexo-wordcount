@@ -13,13 +13,11 @@ var counter = function (content) {
   return [cn.length, wordcount(en)];
 };
 
-hexo.extend.helper.register('min2read', function (content) {
+hexo.extend.helper.register('min2read', function (content, { cn = 300, en = 160 } = {}) {
   'use strict';
   var len = counter(content);
-  var readingTime = len[0] / 300 + len[1] / 160;
-  return readingTime < 1 ? '1' : numeral(
-    len[0] / 300 + len[1] / 160
-  ).format('0');
+  var readingTime = len[0] / cn + len[1] / en;
+  return readingTime < 1 ? '1' : numeral(readingTime.format('0'));
 });
 
 hexo.extend.helper.register('wordcount', function (content) {
