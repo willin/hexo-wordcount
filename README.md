@@ -4,8 +4,15 @@
 
 ## Installation
 
+```bash
+yarn add hexo-wordcount
+# or
+npm i --save hexo-wordcount
 ```
-npm install hexo-wordcount --save
+
+```bash
+# Node 版本7.6.0之前,请安装 2.x 版本 (Node.js v7.6.0 and previous)
+npm install hexo-wordcount@2 --save
 ```
 
 ## Usage
@@ -21,6 +28,13 @@ wordcount(post.content)
 
 ```js
 min2read(post.content)
+```
+
+设置阅读速度 Set Reading Speed:
+
+```js
+min2read(post.content, {cn: 300, en: 160})
+// p.s. (v3.0.0 added)
 ```
 
 ### 总字数统计 TotalCount
