@@ -15,6 +15,20 @@ npm i --save hexo-wordcount
 npm install hexo-wordcount@2 --save
 ```
 
+## For International Use
+
+### Count Words
+
+```js
+countwords(post.content)
+```
+
+### Count Chars
+
+```js
+countchars(post.content)
+```
+
 ## Usage
 
 ### 字数统计 WordCount
