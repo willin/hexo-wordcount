@@ -1,21 +1,8 @@
 {
   "name": "hexo-wordcount",
-  "version": "3.0.2",
+  "version": "6.0.0",
   "description": "Post Word Count Plugin of Hexo.",
-  "main": "index",
-  "engines": {
-    "node": ">= 7.6.0"
-  },
-  "scripts": {
-    "test": "gulp test"
-  },
-  "directories": {
-    "lib": "./lib"
-  },
-  "engines": {
-    "node": ">= 0.10.0",
-    "iojs": ">= 1.6.0"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willin/hexo-wordcount.git"
@@ -31,10 +18,5 @@
     "email": "willin@willin.org",
     "url": "http://willin.wang"
   },
-  "license": "MIT",
-  "dependencies": {
-    "html-to-text": "^2.1.3",
-    "numeral": "^1.5.3",
-    "wordcount": "^1.1.1"
-  }
+  "license": "MIT"
 }

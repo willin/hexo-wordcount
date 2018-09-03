@@ -10,11 +10,6 @@ yarn add hexo-wordcount
 npm i --save hexo-wordcount
 ```
 
-```bash
-# Node 版本7.6.0之前,请安装 2.x 版本 (Node.js v7.6.0 and previous)
-npm install hexo-wordcount@2 --save
-```
-
 ## Usage
 
 ### 字数统计 WordCount
@@ -40,10 +35,8 @@ min2read(post.content, {cn: 300, en: 160})
 ### 总字数统计 TotalCount
 
 ```js
-totalcount(site, '0,0.0a')
+totalcount(site)
 ```
-
-第二个参数为可选参数，表示字数显示的 `format`，文档参考：<http://numeraljs.com/>
 
 ## Demo
 
@@ -64,10 +57,8 @@ Post Minutes to Read:
 Total Count:
 
 ```swig
-   <span class="post-count">{{ totalcount(site, '0,0.0a') }}</span>
+   <span class="post-count">{{ totalcount(site) }}</span>
 ```
-
-Second param `format` optional.
 
 ### Ejs
 
@@ -110,18 +101,6 @@ Total Count:
    span.post-count= totalcount(site)
 ```
 
-
-## Contributors
-
-```
- project  : hexo-wordcount
- repo age : 12 months
- active   : 5 days
- commits  : 8
- files    : 5
- authors  :
-     8  Willin Wang  100.0%
-```
 
 ## LICENSE
 
