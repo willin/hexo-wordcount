@@ -16,7 +16,7 @@ hexo.extend.helper.register('min2read', function (content, { cn = 300, en = 160 
 
 hexo.extend.helper.register('wordcount', function (content) {
   var len = counter(content);
-  count += len[0] + len[1];
+  var count = len[0] + len[1];
   if (count < 1000) {
     return count;
   }
