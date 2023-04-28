@@ -17,10 +17,7 @@ hexo.extend.helper.register('min2read', function (content, { cn = 300, en = 160 
 hexo.extend.helper.register('wordcount', function (content) {
   var len = counter(content);
   var count = len[0] + len[1];
-  if (count < 1000) {
-    return count;
-  }
-  return Math.round(count / 100) / 10 + 'k';
+  return ((count / 100) / 10).toFixed(2) + 'k';
 });
 
 hexo.extend.helper.register('totalcount', function (site) {
